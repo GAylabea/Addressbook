@@ -1,10 +1,6 @@
-{
-  "predef": [ "document", "console", "angular" ],
-  "esversion": 6,
-  "globalstrict": true,
-  "curly": true,
-  "eqeqeq": true,
-  "undef": true,
-  "unused": true,
-  "globals": { "$": true }
-}
+{  
+    "predef": [ "document", "console", "jquery", "module", "require", "jQuery", "angular"],
+    "esversion": 6,
+    "globalstrict": true,
+    "jquery": true,
+} 
