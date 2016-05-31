@@ -6,11 +6,11 @@ app.controller("NavBarCtrl", function($scope){
     }, 
     {
     name: "All Addresses",
-    url: "#/items/list"
+    url: "#/address/list"
   }, 
   {
     name: "New Address", 
-    url: "#/items/new"
+    url: "#/address/new"
   }
   ];
 });

@@ -3,8 +3,8 @@
 app.controller("AddressCtrl", function($scope) {
   $scope.welcome = "hello";
   $scope.showListView = true;
-  $scope.newTask = {};
-  $scope.items = [
+  $scope.newAddress = {};
+  $scope.addresses = [
   {
    id: 0,
     name: "George Clooney",

@@ -1,1 +1,11 @@
-<h1>Item Details</h1> 
+<h1>{{selectedItem.task}}</h1>
+
+<!-- This is the edit button -->
+<button class="btn btn-info"><a ng-href="#/addresses/{{selectedAddress.id}}/edit">Edit</a></button>
+
+<h2>Name: {{selectedAddress.name}}</h2>
+<h2>Cell Phone Number: {{selectedAddress.cellPhoneNum}}</h2>
+<h2>EmailAddress: {{selectedAddress.emailAddress}}</h2>
+<h2>Street Address: {{selectedAddress.streetAddress}}</h2>
+<h2>Contacted?: {{(selectedAddress.isContacted ? "yes" : "no")}}</h2>
+

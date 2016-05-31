@@ -1,25 +1,22 @@
-app.controller("AddressListCtrl", function($scope) {
-  $scope.items = [
-  {
-    id: 0,
-    name: "George Clooney",
-    cellPhoneNum: "503-236-1918",
-    emailAddress: "gClooney@gmail.com",
-    streetAddress: "Somewhere in LA, London or Italy"
-  },
-  {
-    id: 1,
-    name: "Tom Hardy",
-    cellPhoneNum: "503-236-1918",
-    emailAddress: "madMax@gmail.com",
-    streetAddress: "Australia"
-  },
-  {
-    id: 2,
-   name: "Dwayne Johnson",
-    cellPhoneNum: "503-236-1918",
-    emailAddress: "theArtistFormerlyKnownAsTheRock@gmail.com",
-    streetAddress: "Miami, FL"
-    }
-  ];
+app.controller("AddressListCtrl", function($scope, $http, $location, addressStorage) {
+  $scope.addresses = [];
+  addressStorage.getAddressList().then(function(addressCollection){
+    console.log("addressCollection from Promise", addressCollection); 
+    $scope.addresses = addressCollection;
+  });
+
+  $scope.addressDelete = function(addressId){
+    console.log("addressId", addressId);
+    addressStorage.deleteAddress(addressId).then(function(response){
+      addressStorage.getAddressList().then(function(addressCollection){
+        $scope.addresses = addressCollection;
+      });
+    });
+  };
+  $scope.inputChange = function(address){
+    addressStorage.updateCompletedStatus(address)
+    .then(function(response){
+      console.log(response);
+    });
+  };
 });
